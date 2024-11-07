@@ -22,7 +22,7 @@ The function will also update the inventory_records (For restocking) for a  give
     if current_day == 0: #first day 
         previous_day_sales = 0 #first day so no sales will have been made from the previous day
     else:
-        previous_day_sales = inventory_records[-1][1] #  -1 indicates the previous day in the inventory records tuple and 1 indicates the position of the data in the tuple which in this case is sales.
+        previous_day_sales = inventory_records[-1][1] #    -1 indicates the previous day in the inventory records tuple and 1 indicates the position of the data in the tuple which in this case is sales.
         
         
 
