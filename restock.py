@@ -31,6 +31,11 @@ The function will also update the inventory_records (For restocking) for a  give
     if current_day % 7 == 0: # divides current day by 7 and if there is no remainder ie 0 then it will restock supply
         restock_items = capacity_of_inventory - available_items # calculates how much supply is needed
         
+        if restock_items > 0 :
+            #this is for if restock needed is more than 0 it will add the restocked items to the available
+            available_items += restock_items
+            
+        
     
         
         
