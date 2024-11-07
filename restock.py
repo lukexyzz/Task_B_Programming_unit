@@ -22,7 +22,16 @@ The function will also update the inventory_records (For restocking) for a  give
     if current_day == 0: #first day 
         previous_day_sales = 0 #first day so no sales will have been made from the previous day
     else:
-        previous_day_sales = inventory_records[-1][1] #    -1 indicates the previous day in the inventory records tuple and 1 indicates the position of the data in the tuple which in this case is sales.
+        previous_day_sales = inventory_records[-1][1] #     -1 indicates the previous day in the inventory records tuple and 1 indicates the position of the data in the tuple which in this case is sales.
+        
+    available_items -= previous_day_sales # subtracts the sales from previous day with the amount of items in stock ie 2000 - 100 = 1900
+    
+    #creating a if statement to find out if its the 7th day which means restock of the product
+    
+    if current_day % 7 == 0: # divides current day by 7 and if there is no remainder ie 0 then it will restock supply
+        restock_items = capacity_of_inventory - available_items # calculates how much supply is needed
+        
+    
         
         
 
