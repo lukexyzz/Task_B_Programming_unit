@@ -34,7 +34,13 @@ The function will also update the inventory_records (For restocking) for a  give
         if restock_items > 0 :
             #this is for if restock needed is more than 0 it will add the restocked items to the available
             available_items += restock_items
-            
+            inventory_records.append((current_day, previous_day_sales,restock_items,available_items)) # adding all new details to the variable so the list can be updated for next day
+        else:
+            #for when inventory is full
+            inventory_records.append((current_day,previous_day_sales,0,available_items))
+    else:
+        #this refers to the main if statement where if the current_day isnt divisable by 7 then it does restock
+        inventory_records.append((current_day,previous_day_sales,0,available_items))
         
     
         
